@@ -13,7 +13,6 @@ blue=$(tput setaf 38)
 #curl jq emojify egrep
 checkDep() {
   if ! type "egrep" &> /dev/null; then
-
    echo "Missing command: egrep.... exiting"
    echo "Check your \$PATH or try to install it"
    echo "${bold}sudo apt-get install grep${reset}"
@@ -82,7 +81,7 @@ main() {
     usage
   fi
 
-  if [[ $1 =~ http(s){0,1}:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?S+ ]]; then
+  if [[ $1 =~ http(s){0,1}:\/\/ ]]; then
     echo
     echo "Link valid"
   else
@@ -92,15 +91,16 @@ main() {
   fi
 
   while true; do
-    curl --silent "$1" | jq '.[]' | \
-    sed 's/\&amp;/\&/g' | \
-    GREP_COLORS='mt=01;32' grep --color=always -E '@\S+|' | \ #twitter account
-    GREP_COLORS='mt=01;35' grep --color=always -E '#\S+|' | \ #hashtag
-    GREP_COLORS='mt=01;33' grep --color=always -E 'http(s){0,1}:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\S+|' | \ #links
-    GREP_COLORS='mt=01;31' grep --color=always -E 'http(s){0,1}:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\S+\.(jpg|png|jpeg)|' | \ #pictures
-    GREP_COLORS='mt=01;36' grep --color=always -E 'https:\/\/twitter.com\/?\S+|' | \ #twitter links
-    GREP_COLORS='mt=01;37' grep --color=always -E 'https:\/\/github.com\/?\S+|' | \ # github repo
-    emojify;
+    curl --silent "$1" | jq '.[]' \
+    | jq '.[]' \
+    | sed 's/\&amp;/\&/g' \
+    | GREP_COLORS="mt=01;32" grep --color=always -E "@\S+|" \
+    | GREP_COLORS="mt=01;35" grep --color=always -E "#\S+|" \
+    | GREP_COLORS="mt=01;33" grep --color=always -E "http(s){0,1}:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\S+|" \
+    | GREP_COLORS="mt=01;31" grep --color=always -E "http(s){0,1}:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\S+\.(jpg|png|jpeg)|" \
+    | GREP_COLORS="mt=01;36" grep --color=always -E "https:\/\/twitter.com\/?\S+|" \
+    | GREP_COLORS="mt=01;37" grep --color=always -E "https:\/\/github.com\/?\S+|" \
+    | emojify;
     sleep "${2:-600}";
   done
 }

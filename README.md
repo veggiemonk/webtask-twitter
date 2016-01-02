@@ -29,13 +29,16 @@ And you can receive your tweet (or whoever will give access to that webtask) on 
 ### I want the beautiful colors
 
 There is a script called `start.sh` to get you started. Feel free to use whatever works for you.
-It needs:
+This script needs:
   - `curl`: Transferring data with URL syntax. It should be available in your distro `http://curl.haxx.se/download.html`
   - `egrep`: Colorized pattern. It should be available in your distro `https://www.gnu.org/software/grep/`
   - `jq`: JSON processor written in C and has no runtime dependencies. `https://stedolan.github.io/jq/download/`
   - `emojify`: Just because emoji. `https://github.com/mrowa44/emojify`
 
 ## How to install the webtask ?
+
+In case of any problem with webtask, refer to the documentation,
+it is pretty well written: `https://webtask.io/docs/101`
 
 ### 1. Install the webtask-cli
 
@@ -72,8 +75,6 @@ Ensure that this feature is activated in your terminal by typing  `setopt hist_i
 
 Better safe than sorry.
 
-
-
 ### 4. Install the webtask with the secrets
 
 The values exported in the previous step will be passed to a variable `ctx.data` in the webtask code.
@@ -97,11 +98,17 @@ Once installed, just `curl` the url you received from `wt create`:
 
 # Watch tweet in colors
 
-Make sure you have the dependencies ready. If not, the script will try to download them for you. They are pretty much standalone and/or available in your distro.
+Make sure you have the [dependencies](#dependencies) installed. 
+If not, the `start.sh` script will try to download them for you. 
+They are pretty much standalone and/or available in your distro.
 
 ```sh
 ./start.sh https://webtask.it.auth0.com/api/run/(webtask_ID)/webtask?webtask_no_cache=1
 ```
+
+## How do I create my own color-filter ?
+
+Just pipe and `egrep`
 
 # Use cases
 
