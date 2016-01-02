@@ -16,7 +16,7 @@ And you can receive your tweet (or whoever will give access to that webtask) on 
 
 ### I just want the bare cli
 
-`node` is requiered by the webtask cli ( `wt-cli` ).
+`node` is required by the webtask cli ( `wt-cli` ).
 `curl` or `wget` is needed to retrieve data from the webtask.
 
 ### I want the beautiful colors
