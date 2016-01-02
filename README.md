@@ -1,8 +1,15 @@
 # Webtask-Twitter
 
-This is more a Proof of Concept rather that can be the based for a twitter project.
-You can upload JavaScript code (such as `webtask.js` in this repo) to webtask.io and it will run as a node server.
-And you can receive your tweet (or whoever will give access to that webtask) on your cli.
+This is more a proof of concept rather then a full featured twitter cli. 
+This project can be the based for a twitter related project and demonstrate the use of a really nice (and free) service called [webtask.io](https://webtask.io/).
+
+This project was heavily inspired by this [repo](https://github.com/bananaoomarang/webtask-ifttt-tutorial). 
+I recommend you check it out if you want to learn more tricks about webtasks.
+You can upload JavaScript code (such as `webtask.js` in this repo) to webtask.io and it will run as a node server. 
+Run JavaScript with an HTTP call. No provisioning. No deployment.
+The best thing is that it supports ES6!
+
+And you can receive your tweet (or whoever will give access to that webtask) on your cli:
 <h1 align="center">
 	<br>
 	<img width="800" src="https://rawgit.com/veggiemonk/webtask-twitter/master/screenshot.png" alt="screenshot">
@@ -21,7 +28,7 @@ And you can receive your tweet (or whoever will give access to that webtask) on 
 
 ### I want the beautiful colors
 
-There is a script called `start.sh` to get you started.
+There is a script called `start.sh` to get you started. Feel free to use whatever works for you.
 It needs:
   - `curl`: Transferring data with URL syntax. It should be available in your distro `http://curl.haxx.se/download.html`
   - `egrep`: Colorized pattern. It should be available in your distro `https://www.gnu.org/software/grep/`
