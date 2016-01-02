@@ -1,6 +1,10 @@
-# webtask-twitter
+# Webtask-Twitter
 
-# INSTALL
+This is more a Proof of Concept rather that can be the based for a twitter project.
+You can upload JavaScript code (such as `webtask.js` in this repo) to webtask.io and it will run as a node server.
+And you can receive your tweet (or whoever will give access to that webtask) on your cli.
+
+# How to use this ?
 
 ## Dependencies
 
@@ -18,23 +22,25 @@ It needs:
   - `jq`: JSON processor written in C and has no runtime dependencies. `https://stedolan.github.io/jq/download/`
   - `emojify`: Just because emoji. `https://github.com/mrowa44/emojify`
 
-## How to install the webtask
+## How to install the webtask ?
 
-### Install the webtask-cli
+### 1. Install the webtask-cli
 
 ```sh
  npm install -g wt-cli
 ```
 
-### Initialized you account
+### 2. Initialized you account
 
 ```sh
  wt init youremail@ddress.com
 ```
 
-### Set your token and secret as environment variable
+### 3. Set your token and secret as environment variable
 
-Read the next to understand why
+To have access to your tweet your need to authorize your application at https://apps.twitter.com/
+
+Export your secrets:
 
 ```sh
  export WT_TOKEN='...'
@@ -43,18 +49,19 @@ Read the next to understand why
  export WT_CONSUMER_SECRET='...'
 ```
 
-> If your store those information as a file, please don't commit it to your repository! Use .gitignore!!
-  It is not recommended to store secrets as file! 
+> If your store those information in a file, please don't commit it to your repository! Use .gitignore!!
+  It is not recommended to store secrets in file! 
   
-However you can put a space before typing the `export` so that your terminal does not save this to your history. 
-Which is the same as storing your secret as a file. 
+However you can put a space before typing the `export` so that your terminal does not save command to your history. 
+Which is the same as storing your secret in a file. 
+
 Ensure that this feature is activated in your terminal by typing  `setopt hist_ignore_space`.   
 
 Better safe than sorry.
 
 
 
-### Install the webtask with the secrets
+### 4. Install the webtask with the secrets
 
 The values exported in the previous step will be passed to a variable `ctx.data` in the webtask code.
 The name of the parameter (ex: `token`) can be retrieved as `ctx.data.token`
@@ -68,11 +75,19 @@ If the command is **successful** you should see a url like :
 https://webtask.it.auth0.com/api/run/(webtask_ID)/webtask?webtask_no_cache=1
 ```
 
-# Show me my tweet on the cli!!
+# Show me my tweet on the cli!
 
 Once installed, just `curl` the url you received from `wt create`:
 ```
  curl https://webtask.it.auth0.com/api/run/(webtask_ID)/webtask?webtask_no_cache=1
+```
+
+# Watch tweet in colors
+
+Make sure you have the dependencies ready. If not, the script will try to download them for you. They are pretty much standalone and/or available in your distro.
+
+```sh
+./start.sh https://webtask.it.auth0.com/api/run/(webtask_ID)/webtask?webtask_no_cache=1
 ```
 
 # Use cases
