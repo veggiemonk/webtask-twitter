@@ -91,7 +91,7 @@ main() {
   fi
 
   while true; do
-    curl --silent "$1" | jq '.[]' \
+    curl --silent "$1" \
     | jq '.[]' \
     | sed 's/\&amp;/\&/g' \
     | GREP_COLORS="mt=01;32" grep --color=always -E "@\S+|" \

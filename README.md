@@ -108,7 +108,26 @@ They are pretty much standalone and/or available in your distro.
 
 ## How do I create my own color-filter ?
 
-Just pipe and `egrep`
+Just pipe and `grep`.
+Inside `start.sh`, there are grep color filters:
+
+```sh
+  while true; do
+    curl --silent "$1" \
+    | jq '.[]' \
+    | sed 's/\&amp;/\&/g' \
+    | GREP_COLORS="mt=01;32" grep --color=always -E "@\S+|" \
+    | GREP_COLORS="mt=01;35" grep --color=always -E "#\S+|" \
+    | GREP_COLORS="mt=01;33" grep --color=always -E "http(s){0,1}:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\S+|" \
+    | GREP_COLORS="mt=01;31" grep --color=always -E "http(s){0,1}:\/\/?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\S+\.(jpg|png|jpeg)|" \
+    | GREP_COLORS="mt=01;36" grep --color=always -E "https:\/\/twitter.com\/?\S+|" \
+    | GREP_COLORS="mt=01;37" grep --color=always -E "https:\/\/github.com\/?\S+|" \
+    | emojify;
+    sleep "${2:-600}";
+  done
+```
+Just adapt the regular expression to fit your needs. Those regex can probably be improved as well.
+
 
 # Use cases
 
