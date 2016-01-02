@@ -1,9 +1,8 @@
 {
   "name": "webtask-twitter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
-    "wt": "wt create --secret token=$WT_TOKEN --secret secret=$WT_SECRET --secret consumerKey=$WT_CONSUMER_KEY --secret consumerSecret=$WT_CONSUMER_SECRET webtask.js",
-    "run": "node index.js"
+    "webtask": "wt create --secret token=$WT_TOKEN --secret secret=$WT_SECRET --secret consumerKey=$WT_CONSUMER_KEY --secret consumerSecret=$WT_CONSUMER_SECRET webtask.js"
   },
   "dependencies": {
     "dotenv": "^1.2.0",
