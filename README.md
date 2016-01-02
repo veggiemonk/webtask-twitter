@@ -3,7 +3,13 @@
 This is more a Proof of Concept rather that can be the based for a twitter project.
 You can upload JavaScript code (such as `webtask.js` in this repo) to webtask.io and it will run as a node server.
 And you can receive your tweet (or whoever will give access to that webtask) on your cli.
-
+<h1 align="center">
+	<br>
+	<img width="400" src="https://rawgit.com/veggiemonk/webtask-twitter/master/screenshot.png" alt="screenshot">
+	<br>
+	<br>
+	<br>
+</h1>
 # How to use this ?
 
 ## Dependencies
