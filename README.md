@@ -5,7 +5,7 @@ You can upload JavaScript code (such as `webtask.js` in this repo) to webtask.io
 And you can receive your tweet (or whoever will give access to that webtask) on your cli.
 <h1 align="center">
 	<br>
-	<img width="400" src="https://rawgit.com/veggiemonk/webtask-twitter/master/screenshot.png" alt="screenshot">
+	<img width="800" src="https://rawgit.com/veggiemonk/webtask-twitter/master/screenshot.png" alt="screenshot">
 	<br>
 	<br>
 	<br>
