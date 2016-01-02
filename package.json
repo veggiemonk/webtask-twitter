@@ -1,0 +1,19 @@
+{
+  "name": "webtask-twitter",
+  "version": "0.1.0",
+  "scripts": {
+    "wt": "wt create --secret token=$WT_TOKEN --secret secret=$WT_SECRET --secret consumerKey=$WT_CONSUMER_KEY --secret consumerSecret=$WT_CONSUMER_SECRET webtask.js",
+    "run": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^1.2.0",
+    "lodash": "^3.10.1",
+    "request": "^2.67.0",
+    "twit": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-preset-es2015-loose": "^6.1.4",
+    "babel-preset-stage-0": "^6.3.13"
+  }
+}

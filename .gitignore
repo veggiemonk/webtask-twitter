@@ -1,0 +1,9 @@
+.idea
+node_modules
+dist
+.sass-cache
+.env
+export
+output*
+*compiled.js.map
+*compiled.js
