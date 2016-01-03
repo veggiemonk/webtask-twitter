@@ -30,15 +30,15 @@ And you can receive your tweet (or whoever will give access to that webtask) on 
 
 There is a script called `start.sh` to get you started. Feel free to use whatever works for you.
 This script needs:
-  - `curl`: Transferring data with URL syntax. It should be available in your distro `http://curl.haxx.se/download.html`
-  - `egrep`: Colorized pattern. It should be available in your distro `https://www.gnu.org/software/grep/`
-  - `jq`: JSON processor written in C and has no runtime dependencies. `https://stedolan.github.io/jq/download/`
-  - `emojify`: Just because emoji. `https://github.com/mrowa44/emojify`
+  - `curl`: Transferring data with URL syntax. It should be available in your distro http://curl.haxx.se/download.html
+  - `egrep`: Colorized pattern. It should be available in your distro https://www.gnu.org/software/grep/
+  - `jq`: JSON processor written in C and has no runtime dependencies. https://stedolan.github.io/jq/download/
+  - `emojify`: Just because emoji. https://github.com/mrowa44/emojify
 
 ## How to install the webtask ?
 
 In case of any problem with webtask, refer to the documentation,
-it is pretty well written: `https://webtask.io/docs/101`
+it is pretty well written: https://webtask.io/docs/101
 
 ### 1. Install the webtask-cli
 
